@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diana Starter Kit — IA local PT-BR em 30 min</title>
+<meta name="description" content="Pacote pré-configurado. Setup IA local PT-BR no seu Mac em 30 minutos. Pay-what-you-want.">
+<style>
+:root {
+  --bg: #0d1117;
+  --bg-alt: #161b22;
+  --fg: #c9d1d9;
+  --fg-strong: #f0f6fc;
+  --accent: #ff9500;
+  --link: #58a6ff;
+  --border: #30363d;
+  --green: #3fb950;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.container { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
+h1 { font-size: 38px; color: var(--fg-strong); line-height: 1.2; margin-bottom: 8px; }
+.sub { font-size: 21px; color: #8b949e; margin-bottom: 24px; }
+.price {
+  display: inline-block;
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 8px 16px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  margin: 16px 0 8px;
+}
+small { color: #8b949e; font-size: 14px; }
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 24px 0;
+}
+.cta:hover { background: #e08400; }
+h2 { font-size: 22px; color: var(--fg-strong); margin: 32px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+h3 { font-size: 18px; color: var(--accent); margin: 20px 0 8px; }
+ul { padding-left: 24px; margin: 12px 0; }
+li { margin: 6px 0; }
+.box {
+  background: var(--bg-alt);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  margin: 16px 0;
+}
+code {
+  background: var(--bg-alt);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--link);
+}
+pre {
+  background: var(--bg-alt);
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 14px;
+  border: 1px solid var(--border);
+}
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 14px; }
+footer code { color: var(--accent); word-break: break-all; }
+a { color: var(--link); }
+.check { color: var(--green); margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Diana Starter Kit</h1>
+<p class="sub">IA local PT-BR rodando no seu Mac em 30 minutos. Pré-configurado.</p>
+
+<div class="price">Pay-what-you-want · R$ 0 - 99</div>
+<p><small>(sugerido R$49 se foi útil)</small></p>
+
+<p>
+  <a class="cta" href="#download">Baixar grátis</a>
+  &nbsp;
+  <small>via Gumroad · 8MB · sem login</small>
+</p>
+
+<h2>O que tem</h2>
+
+<ul>
+  <li><span class="check">✓</span> <strong>4 LaunchAgents</strong> prontos (cron, KeepAlive, sobrevive reboot)</li>
+  <li><span class="check">✓</span> <strong>Knowledge feed</strong> diário PT-BR (arxiv + HN + r/LocalLLaMA)</li>
+  <li><span class="check">✓</span> <strong>Work loop</strong> autônomo com guardrails (whitelist paths, blocklist commands)</li>
+  <li><span class="check">✓</span> <strong>Nightly ORPO orchestrator</strong> com auto-promote + eval gate</li>
+  <li><span class="check">✓</span> <strong>System prompt PT-BR</strong> brasileiro real (sem ChatGPT-ês)</li>
+  <li><span class="check">✓</span> <strong>5 cheatsheets PDF</strong> — Ollama, MLX, Fine-tuning, Prompts, Debug</li>
+  <li><span class="check">✓</span> <strong>Installer 1-click</strong> (bash install.sh)</li>
+  <li><span class="check">✓</span> <strong>Configurações otimizadas</strong> (OLLAMA_NUM_PARALLEL, keep_alive, etc)</li>
+</ul>
+
+<h2>Setup</h2>
+
+<pre>$ unzip diana-starter-kit-v1.zip
+$ cd diana-starter-kit
+$ bash install.sh
+
+# Em ~30 min você tem:
+# - Ollama + qwen3:14b baixado
+# - Diana respondendo em :8600
+# - Knowledge feed pegando arxiv 2x/dia
+# - Work loop processando autônomo</pre>
+
+<h2>Pra quem é</h2>
+
+<div class="box">
+  <strong>É pra você se</strong>:
+  <ul>
+    <li>Tem Mac M-series (16GB+ RAM)</li>
+    <li>Quer IA local PT-BR mas não quer perder 6h aprendendo</li>
+    <li>Já tentou e teve problemas (LaunchAgent, OOM, latência)</li>
+    <li>Curioso pra ver multi-agent funcionando</li>
+  </ul>
+</div>
+
+<h2>Pra quem NÃO é</h2>
+
+<ul>
+  <li>Mac Intel (sem suporte Apple Silicon nativo)</li>
+  <li>&lt;16GB RAM (qwen3:14b precisa mínimo 12GB)</li>
+  <li>Quer "configurar tudo do zero" (esse kit não é didático, é prático)</li>
+</ul>
+
+<h2>Não inclui</h2>
+
+<ul>
+  <li>Pesos do modelo (você baixa via <code>ollama pull</code>)</li>
+  <li>Hardware</li>
+  <li>Garantia de bug-free em todo Mac (testado em M1 Air 16GB, M2 Pro 32GB, M3 Ultra 96GB)</li>
+  <li>Suporte 1-1 (Discord free pra dúvidas comunidade)</li>
+</ul>
+
+<h2>O que cobre vs o que vem grátis</h2>
+
+<div class="box">
+  Você poderia montar tudo isso lendo:
+  <ul>
+    <li>Docs Ollama, MLX, Mem0, ChromaDB, etc</li>
+    <li>50+ tutoriais espalhados</li>
+    <li>Stack Overflow pra cada erro</li>
+  </ul>
+  Tempo estimado: 8-15h.
+  <br><br>
+  <strong>Esse kit é o atalho.</strong> Empacotado, testado, sem fricção.
+</div>
+
+<h2>FAQ</h2>
+
+<h3>Por que pay-what-you-want?</h3>
+<p>Quero que devs BR comecem com IA local. Se você pagou R$0, beleza. Se foi útil, manda R$49 ou uns sats. Honra system.</p>
+
+<h3>Atualizações?</h3>
+<p>Vendo a v1 agora. v2 sai em ~30 dias com Vera (researcher agent) + Mem0 v2 + scripts atualizados. Quem comprou recebe.</p>
+
+<h3>Aceita BTC direto?</h3>
+<p>Sim, sem Gumroad: ⚡ <code>bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz</code> · me manda print do tx + email pra eu liberar download.</p>
+
+<h3>Tem suporte?</h3>
+<p>Discord free tier pra perguntas comunidade. Audit técnico personalizado: <a href="https://audit-local-ai.dev">audit-local-ai.dev</a> (separado, R$400).</p>
+
+<h2 id="download">Download</h2>
+
+<p>
+  <a class="cta" href="https://diana-starter-kit.gumroad.com">Baixar via Gumroad</a>
+</p>
+
+<p>Ou <code>git clone</code> direto (mas sem PDFs polidos):</p>
+
+<pre>git clone https://github.com/rafaelvieira/diana-starter-kit.git</pre>
+
+<footer>
+  <p><strong>Diana Starter Kit</strong> · Rafael Vieira · 2026 · MIT</p>
+  <p>⚡ BTC: <code>bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz</code></p>
+  <p>Sem cookies. Sem analytics. Sem newsletter forçada.</p>
+  <p>Outros: <a href="https://audit-local-ai.dev">audit-local-ai</a> · <a href="https://vibe-local.dev">vibe-local</a> · <a href="https://github.com/rafaelvieira/mito-protocol">mito-protocol</a></p>
+</footer>
+
+</div>
+</body>
+</html>
