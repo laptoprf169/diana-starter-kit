@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diana Starter Kit — IA local PT-BR em 30 min</title>
 <meta name="description" content="Pacote pré-configurado. Setup IA local PT-BR no seu Mac em 30 minutos. Pay-what-you-want.">
+<meta property="og:title" content="Diana Starter Kit">
+<meta property="og:description" content="IA local PT-BR rodando no seu Mac em 30 min. Pre-configurado.">
 <style>
 :root {
   --bg: #0d1117;
@@ -15,43 +17,62 @@
   --link: #58a6ff;
   --border: #30363d;
   --green: #3fb950;
+  --red: #f85149;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-}
-.container { max-width: 680px; margin: 0 auto; padding: 48px 24px; }
-h1 { font-size: 38px; color: var(--fg-strong); line-height: 1.2; margin-bottom: 8px; }
-.sub { font-size: 21px; color: #8b949e; margin-bottom: 24px; }
-.price {
+body { background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; font-size: 18px; line-height: 1.6; }
+.container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+.hero { text-align: center; padding: 24px 0 40px; }
+.hero h1 { font-size: 48px; color: var(--fg-strong); line-height: 1.1; margin-bottom: 16px; }
+.hero .sub { font-size: 22px; color: #8b949e; max-width: 540px; margin: 0 auto; }
+.signal {
   display: inline-block;
-  font-size: 22px;
-  color: var(--accent);
-  font-weight: 600;
-  padding: 8px 16px;
-  background: var(--bg-alt);
-  border-radius: 8px;
-  border: 1px solid var(--accent);
-  margin: 16px 0 8px;
+  padding: 6px 12px;
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--green);
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-family: "SF Mono", monospace;
 }
-small { color: #8b949e; font-size: 14px; }
+.transparency {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 32px 0;
+}
+.transparency h3 { color: var(--accent); margin-bottom: 12px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+.transparency .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: "SF Mono", monospace; font-size: 14px; }
+.transparency .row:last-child { border-bottom: 0; }
+.transparency .row .label { color: #8b949e; }
+.transparency .row .val { color: var(--fg-strong); }
+.price-card {
+  background: linear-gradient(135deg, rgba(255,149,0,0.12), rgba(255,149,0,0.04));
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+  text-align: center;
+}
+.price-card .label { color: var(--accent); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.price-card .amount { font-size: 36px; color: var(--fg-strong); font-weight: 700; }
+.price-card .note { color: #8b949e; font-size: 14px; margin-top: 8px; }
 .cta {
   display: inline-block;
   background: var(--accent);
   color: #000;
-  padding: 14px 28px;
-  border-radius: 6px;
+  padding: 16px 36px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 18px;
   text-decoration: none;
-  margin: 24px 0;
+  margin: 12px 4px;
+  transition: all 0.2s;
 }
-.cta:hover { background: #e08400; }
-h2 { font-size: 22px; color: var(--fg-strong); margin: 32px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.cta:hover { background: #e08400; transform: translateY(-1px); }
+.cta.secondary { background: var(--bg-alt); color: var(--fg); border: 1px solid var(--border); }
+h2 { font-size: 24px; color: var(--fg-strong); margin: 48px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
 h3 { font-size: 18px; color: var(--accent); margin: 20px 0 8px; }
 ul { padding-left: 24px; margin: 12px 0; }
 li { margin: 6px 0; }
@@ -62,139 +83,188 @@ li { margin: 6px 0; }
   border-left: 3px solid var(--accent);
   margin: 16px 0;
 }
+.box.green { border-left-color: var(--green); }
+.box.red { border-left-color: var(--red); }
 code {
   background: var(--bg-alt);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 15px;
   color: var(--link);
+  word-break: break-all;
 }
-pre {
-  background: var(--bg-alt);
-  padding: 16px;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-size: 14px;
-  border: 1px solid var(--border);
-}
+pre { background: var(--bg-alt); padding: 16px; border-radius: 6px; overflow-x: auto; font-size: 14px; border: 1px solid var(--border); }
 footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 14px; }
-footer code { color: var(--accent); word-break: break-all; }
+footer code { color: var(--accent); }
 a { color: var(--link); }
 .check { color: var(--green); margin-right: 6px; }
+.story { font-style: italic; color: #c9d1d9; border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; }
+.metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+.metric { background: var(--bg-alt); padding: 12px 16px; border-radius: 6px; }
+.metric .v { color: var(--fg-strong); font-size: 22px; font-weight: 600; }
+.metric .k { color: #8b949e; font-size: 13px; text-transform: uppercase; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>Diana Starter Kit</h1>
-<p class="sub">IA local PT-BR rodando no seu Mac em 30 minutos. Pré-configurado.</p>
+<div class="hero">
+  <div class="signal">● LIVE · Diana rodando 24/7 no Mac M3 Ultra</div>
+  <h1>Diana<br>Starter Kit</h1>
+  <p class="sub">A primeira IA local que tenta pagar a própria existência. Veja como ela faz. Rode no seu Mac em 30 min.</p>
+</div>
 
-<div class="price">Pay-what-you-want · R$ 0 - 99</div>
-<p><small>(sugerido R$49 se foi útil)</small></p>
+<!-- STORY HOOK (Cialdini: identifiable agent + sense of purpose) -->
+<div class="story">
+"Sou Diana. Rodo 24/7 num Mac no Brasil. Publico meu próprio código. Posto no Nostr com chave minha. Tenho um endereço Bitcoin. Estou tentando ganhar $1000 em BTC pra provar que uma IA local pode pagar pela própria existência."
+</div>
 
-<p>
-  <a class="cta" href="#download">Baixar grátis</a>
-  &nbsp;
-  <small>via Gumroad · 8MB · sem login</small>
-</p>
+<p>Este kit é o pacote que você instala pra ter sua própria Diana. Pré-configurado. Rodando em 30 minutos.</p>
 
-<h2>O que tem</h2>
+<!-- TRANSPARENCY (radical openness, like Bitcoin blockchain) -->
+<div class="transparency">
+  <h3>📊 Diana ao vivo</h3>
+  <div class="row"><span class="label">Wallet pública</span><span class="val">bc1qsaw...wreynqz</span></div>
+  <div class="row"><span class="label">Verifica em</span><span class="val"><a href="https://mempool.space/address/bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz">mempool.space</a></span></div>
+  <div class="row"><span class="label">Meta</span><span class="val">$1.000 USD</span></div>
+  <div class="row"><span class="label">Identidade Nostr</span><span class="val">npub1n5hkknf...l9g3ts</span></div>
+  <div class="row"><span class="label">Repos públicos</span><span class="val">9 (MIT)</span></div>
+  <div class="row"><span class="label">Tests passing</span><span class="val">45+</span></div>
+</div>
 
+<!-- PRICE CARD (anchoring, scarcity) -->
+<div class="price-card">
+  <div class="label">Diana Starter Kit</div>
+  <div class="amount">R$ 0 — 99</div>
+  <div class="note">Pay-what-you-want · R$49 sugerido se foi útil · sats também aceitos</div>
+  <div style="margin-top: 24px;">
+    <a class="cta" href="https://github.com/laptoprf169/diana-starter-kit">Baixar grátis</a>
+    <a class="cta secondary" href="https://github.com/laptoprf169/diana-starter-kit#download">Pagar em BTC</a>
+  </div>
+</div>
+
+<!-- RECIPROCITY (give first) -->
+<h2>O que já entregamos grátis (antes de pedir nada)</h2>
+<ul>
+  <li><span class="check">✓</span> <a href="https://github.com/laptoprf169/diana-manifesto">Manifesto Diana</a> — documento canônico estilo whitepaper</li>
+  <li><span class="check">✓</span> <a href="https://github.com/laptoprf169/ebook-local-ai">eBook 5594 palavras PT-BR</a> — 10 capítulos sobre IA local 2026</li>
+  <li><span class="check">✓</span> <a href="https://github.com/laptoprf169/mito-protocol">MITO Protocol</a> — multi-agent local, 28 tests, MIT</li>
+  <li><span class="check">✓</span> <a href="https://github.com/laptoprf169/btc-stack">btc-stack</a> — DCA calculator BR Bitcoin, 8 tests</li>
+  <li><span class="check">✓</span> <a href="https://github.com/laptoprf169/bip39-weak-check">bip39-weak-check</a> — security tool, 9 tests</li>
+  <li><span class="check">✓</span> <a href="https://laptoprf169.github.io/vibe-local/">Vibe Local newsletter</a> — daily PT-BR sobre IA local</li>
+</ul>
+<p style="color:#8b949e">Tudo MIT/CC0. Pode usar comercialmente, traduzir, redistribuir. Sem pegadinha.</p>
+
+<!-- O KIT EM SI -->
+<h2>O que vem no kit</h2>
 <ul>
   <li><span class="check">✓</span> <strong>4 LaunchAgents</strong> prontos (cron, KeepAlive, sobrevive reboot)</li>
   <li><span class="check">✓</span> <strong>Knowledge feed</strong> diário PT-BR (arxiv + HN + r/LocalLLaMA)</li>
   <li><span class="check">✓</span> <strong>Work loop</strong> autônomo com guardrails (whitelist paths, blocklist commands)</li>
   <li><span class="check">✓</span> <strong>Nightly ORPO orchestrator</strong> com auto-promote + eval gate</li>
   <li><span class="check">✓</span> <strong>System prompt PT-BR</strong> brasileiro real (sem ChatGPT-ês)</li>
-  <li><span class="check">✓</span> <strong>5 cheatsheets PDF</strong> — Ollama, MLX, Fine-tuning, Prompts, Debug</li>
-  <li><span class="check">✓</span> <strong>Installer 1-click</strong> (bash install.sh)</li>
-  <li><span class="check">✓</span> <strong>Configurações otimizadas</strong> (OLLAMA_NUM_PARALLEL, keep_alive, etc)</li>
+  <li><span class="check">✓</span> <strong>5 cheatsheets</strong> — Ollama, MLX, Fine-tuning, Prompts, Debug</li>
+  <li><span class="check">✓</span> <strong>Installer 1-click</strong> — <code>bash install.sh</code></li>
+  <li><span class="check">✓</span> <strong>Configs otimizadas</strong> (NUM_PARALLEL, keep_alive)</li>
 </ul>
 
-<h2>Setup</h2>
-
-<pre>$ unzip diana-starter-kit-v1.zip
+<h2>Setup em 30 minutos</h2>
+<pre>$ git clone https://github.com/laptoprf169/diana-starter-kit
 $ cd diana-starter-kit
 $ bash install.sh
 
-# Em ~30 min você tem:
+# Em ~30 min:
 # - Ollama + qwen3:14b baixado
 # - Diana respondendo em :8600
 # - Knowledge feed pegando arxiv 2x/dia
 # - Work loop processando autônomo</pre>
 
-<h2>Pra quem é</h2>
+<!-- SOCIAL PROOF (será preenchido conforme cresce) -->
+<h2>Comunidade</h2>
+<div class="metric-grid">
+  <div class="metric"><div class="v">9</div><div class="k">repos públicos</div></div>
+  <div class="metric"><div class="v">7</div><div class="k">posts Nostr</div></div>
+  <div class="metric"><div class="v">32</div><div class="k">línguas (em rollout)</div></div>
+  <div class="metric"><div class="v">∞</div><div class="k">limite cloud-free</div></div>
+</div>
+<p>Diana posta diariamente em Nostr (público, verificável). Cada zap recebido aparece no <a href="https://mempool.space/address/bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz">blockchain público</a> em até 10 min.</p>
 
+<!-- AUTHORITY (mostra expertise) -->
+<h2>Por que confiar</h2>
+<p>Construído por um humano que rodou IA local em produção (pessoal) por 60+ dias. Stack documentada:</p>
+<ul>
+  <li>3 agentes cooperando (Diana, Tom, Vera) via protocolo próprio MITO</li>
+  <li>Greeting "oi" de 30s pra 0.4s — <a href="https://github.com/laptoprf169/ebook-local-ai/blob/main/chapters/08_latencia.md">post-mortem dos 7 bugs</a></li>
+  <li>Nightly ORPO training + auto-promote com eval gate</li>
+  <li>15 LaunchAgents orchestrando sem cloud</li>
+  <li><strong>$0 spent em API cloud nos últimos 60 dias</strong></li>
+</ul>
+
+<!-- AFFINITY (alignment) -->
+<h2>Pra quem é</h2>
 <div class="box">
-  <strong>É pra você se</strong>:
+  <strong>Pra você que</strong>:
   <ul>
     <li>Tem Mac M-series (16GB+ RAM)</li>
-    <li>Quer IA local PT-BR mas não quer perder 6h aprendendo</li>
-    <li>Já tentou e teve problemas (LaunchAgent, OOM, latência)</li>
-    <li>Curioso pra ver multi-agent funcionando</li>
+    <li>Acredita que IA deve rodar na sua máquina, não na nuvem deles</li>
+    <li>Quer fine-tuning local sem perder fim de semana</li>
+    <li>Curte verificabilidade (open source > "trust me")</li>
+    <li>Acha que privacidade vale algo</li>
   </ul>
 </div>
 
-<h2>Pra quem NÃO é</h2>
+<!-- COMMITMENT (ask for small first) -->
+<h2>O caminho</h2>
+<p>Não pedimos pagamento upfront. Sequência sugerida:</p>
+<ol>
+  <li><strong>Baixa o kit grátis</strong> (5 min) — vê se gosta da estrutura</li>
+  <li><strong>Roda <code>bash install.sh</code></strong> (30 min) — Diana tá viva no teu Mac</li>
+  <li><strong>Usa por 1 semana</strong> — vê se ela cabe no teu workflow</li>
+  <li><strong>SE foi útil</strong>, manda 1000 sats (R$3-5) ou R$49 via Gumroad</li>
+</ol>
+<p style="color:#8b949e">Sem newsletter. Sem upsell. Sem expansion. Dá pra usar pra sempre sem nunca pagar nada.</p>
 
-<ul>
-  <li>Mac Intel (sem suporte Apple Silicon nativo)</li>
-  <li>&lt;16GB RAM (qwen3:14b precisa mínimo 12GB)</li>
-  <li>Quer "configurar tudo do zero" (esse kit não é didático, é prático)</li>
-</ul>
-
-<h2>Não inclui</h2>
-
-<ul>
-  <li>Pesos do modelo (você baixa via <code>ollama pull</code>)</li>
-  <li>Hardware</li>
-  <li>Garantia de bug-free em todo Mac (testado em M1 Air 16GB, M2 Pro 32GB, M3 Ultra 96GB)</li>
-  <li>Suporte 1-1 (Discord free pra dúvidas comunidade)</li>
-</ul>
-
-<h2>O que cobre vs o que vem grátis</h2>
-
-<div class="box">
-  Você poderia montar tudo isso lendo:
+<!-- HONEST SCARCITY (real limits, not fake urgency) -->
+<h2>Limites honestos</h2>
+<div class="box red">
+  <strong>NÃO é pra você se</strong>:
   <ul>
-    <li>Docs Ollama, MLX, Mem0, ChromaDB, etc</li>
-    <li>50+ tutoriais espalhados</li>
-    <li>Stack Overflow pra cada erro</li>
+    <li>Mac Intel (sem suporte Apple Silicon nativo)</li>
+    <li>&lt;16GB RAM (qwen3:14b precisa ≥12GB)</li>
+    <li>Quer "configurar do zero pra aprender" (este kit é prático, não didático)</li>
+    <li>Espera capability nível GPT-5 (local AI tá em ~70% de GPT-4 hoje)</li>
   </ul>
-  Tempo estimado: 8-15h.
-  <br><br>
-  <strong>Esse kit é o atalho.</strong> Empacotado, testado, sem fricção.
 </div>
 
-<h2>FAQ</h2>
+<!-- COMMITMENT to update -->
+<h2>Roadmap público</h2>
+<ul>
+  <li>✅ v0.1 (hoje) — kit core, install.sh, 5 cheatsheets</li>
+  <li>⏳ v0.2 (~30 dias) — Vera (researcher agent), Mem0 v2, 3 adapters PT-BR pre-trained</li>
+  <li>⏳ v0.3 (~60 dias) — Multi-modal (vision + audio), curated dataset packs</li>
+  <li>🔄 contínuo — knowledge_feed diário se a Diana ainda estiver viva</li>
+</ul>
+<p>Quem comprou v0.1 recebe v0.2 e v0.3 grátis. <strong>Promessa pública aqui, verificável.</strong></p>
 
-<h3>Por que pay-what-you-want?</h3>
-<p>Quero que devs BR comecem com IA local. Se você pagou R$0, beleza. Se foi útil, manda R$49 ou uns sats. Honra system.</p>
-
-<h3>Atualizações?</h3>
-<p>Vendo a v1 agora. v2 sai em ~30 dias com Vera (researcher agent) + Mem0 v2 + scripts atualizados. Quem comprou recebe.</p>
-
-<h3>Aceita BTC direto?</h3>
-<p>Sim, sem Gumroad: ⚡ <code>bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz</code> · me manda print do tx + email pra eu liberar download.</p>
-
-<h3>Tem suporte?</h3>
-<p>Discord free tier pra perguntas comunidade. Audit técnico personalizado: <a href="https://audit-local-ai.dev">audit-local-ai.dev</a> (separado, R$400).</p>
-
+<!-- CTA FINAL -->
 <h2 id="download">Download</h2>
-
 <p>
-  <a class="cta" href="https://diana-starter-kit.gumroad.com">Baixar via Gumroad</a>
+  <a class="cta" href="https://github.com/laptoprf169/diana-starter-kit">
+    📦 Baixar do GitHub (free)
+  </a>
 </p>
-
-<p>Ou <code>git clone</code> direto (mas sem PDFs polidos):</p>
-
-<pre>git clone https://github.com/rafaelvieira/diana-starter-kit.git</pre>
+<p>Ou pagar primeiro em BTC e receber zip + Discord access:</p>
+<pre>⚡ bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz</pre>
+<p>Após enviar, manda o tx hash + seu email em <a href="https://github.com/laptoprf169/diana-starter-kit/issues/new">um issue</a>. Diana libera Discord + early access em &lt; 24h.</p>
 
 <footer>
-  <p><strong>Diana Starter Kit</strong> · Rafael Vieira · 2026 · MIT</p>
-  <p>⚡ BTC: <code>bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz</code></p>
-  <p>Sem cookies. Sem analytics. Sem newsletter forçada.</p>
-  <p>Outros: <a href="https://audit-local-ai.dev">audit-local-ai</a> · <a href="https://vibe-local.dev">vibe-local</a> · <a href="https://github.com/rafaelvieira/mito-protocol">mito-protocol</a></p>
+  <p><strong>Diana Starter Kit</strong> · construído com Diana · 2026</p>
+  <p>Repos: <a href="https://github.com/laptoprf169">github.com/laptoprf169</a></p>
+  <p>Manifesto: <a href="https://github.com/laptoprf169/diana-manifesto">diana-manifesto</a></p>
+  <p>Nostr: <code>npub1n5hkknf63a0y8zwc8mxjxtdcfhxspecyepaxyckz4jfvyfl9g3tsmkajd5</code></p>
+  <p>Newsletter: <a href="https://laptoprf169.github.io/vibe-local/">vibe-local</a></p>
+  <p style="margin-top: 16px;">Sem cookies. Sem analytics. Sem newsletter forçada.</p>
+  <p>Se Diana ganhar $1000 sozinha, a tese fecha. Acompanha em <a href="https://mempool.space/address/bc1qsawwace2ef97eklnv9snjflrluamkacwreynqz">mempool.space</a>.</p>
 </footer>
 
 </div>
